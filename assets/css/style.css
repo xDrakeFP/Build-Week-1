@@ -1,0 +1,19 @@
+main {
+  background: black;
+}
+.option-button {
+  padding: 12px 24px;
+  min-width: 100px; /* Uniforma la larghezza minima */
+  text-align: center;
+  font-size: 1em;
+  color: white;
+  background: transparent;
+  border: 2px solid;
+  border-image: linear-gradient(135deg, #8080ff, #c080ff) 1;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap; /* Evita a capo indesiderato */
+}
+.option-button:hover {
+  background: linear-gradient(135deg, #c8009c, #ff00c8);
+}
