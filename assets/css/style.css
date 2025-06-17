@@ -144,6 +144,7 @@ h3 {
   text-align: center;
   font-weight: bold;
   letter-spacing: 2px;
+  margin-top: 50px;
 }
 .form {
   border-color: #c2128d;
@@ -156,4 +157,7 @@ h3 {
 ::placeholder {
   font-size: 20px;
   padding-left: 15px;
+}
+#question-counter span {
+  color: #c2128d;
 }
