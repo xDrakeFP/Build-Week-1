@@ -132,7 +132,6 @@ input {
 
 h1 + h3 {
   color: whitesmoke;
-  /* text-align: center; */
   font-size: 1.7em;
   font-family: "Poppins";
   margin-bottom: 2em;
@@ -140,7 +139,6 @@ h1 + h3 {
 }
 div + h3 {
   color: whitesmoke;
-  /* text-align: center; */
   font-size: 1.7em;
   font-family: "Poppins";
   margin-bottom: 2em;
@@ -256,10 +254,28 @@ h2 span {
   text-align: center;
 }
 #confirm-button {
-  background-color: transparent;
-  border: 1px solid white;
+  font-family: "Poppins";
+  font-size: 1.5em;
+  font-weight: bold;
+  width: 35%;
+  height: 70px;
+  border-radius: 40px;
   color: white;
-  border-radius: 10px;
-  font-size: large;
+  background-color: rgb(255 255 255 / 10%);
   padding: 5px 10px;
+  margin-top: 30px;
+  border: 3px solid;
 }
+
+.buttonRisposte {
+  font-family: "Poppins";
+  display: inline;
+  width: 35%;
+  height: 70px;
+  border-radius: 40px;
+  background-color: rgb(255 255 255 / 10%);
+  color: white;
+  margin: 10px 20px;
+  border: 3px solid;
+}
+/* classe da aggiungere ai bottoni creati in js */
