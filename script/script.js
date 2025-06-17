@@ -54,7 +54,7 @@ new Chart(canvas, {
         lines: messageSelected,
       },
       shadowPlugin: {
-        shadowColor: "rgba(0,0,0,0.45)",
+        shadowColor: "rgba(0,0,0,0.45)", //plugin per le ombre
         shadowBlur: 10,
         shadowOffsetX: 2,
         shadowOffsetY: 2,
@@ -102,6 +102,7 @@ new Chart(canvas, {
       },
     },
     {
+      //impostazioni plugin ombre
       id: "shadowPlugin",
       beforeDatasetDraw(chart, args, options) {
         const ctx = chart.ctx;
@@ -112,13 +113,15 @@ new Chart(canvas, {
         ctx.shadowOffsetY = options.shadowOffsetY || 8;
       },
       afterDatasetDraw(chart) {
+        //importante per far si che solo il grafico abbia l'ombra e non anche le scritte
         chart.ctx.restore();
       },
     },
   ],
 });
 
-const answersPercent = (score) => {
+//funzione calcola punteggi
+const answersPercent = () => {
   const correct = score * 10;
   document.getElementById("correctH2").innerHTML = `Correct <br /> ${correct}%`;
   document.getElementById("correctP").innerText = `${score}/10 questions.`;
@@ -127,3 +130,5 @@ const answersPercent = (score) => {
   }%`;
   document.getElementById("wrongP").innerText = `${10 - score}/10 questions.`;
 };
+
+answersPercent();
