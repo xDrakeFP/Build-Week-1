@@ -3,16 +3,18 @@ main {
 }
 
 .option-button {
-  padding: 12px 12px;
+  display: inline-block;
+  padding: 12px;
   width: 200px;
   height: 50px;
   text-align: center;
   font-size: 1em;
   color: white;
+  border: none;
   background-color: transparent;
-  border-radius: 999px;
   border: 4px solid transparent;
   border-image: linear-gradient(180deg, white, gray);
+  border-radius: 999px;
 }
 .option-button:hover,
 .option-button.selected {
