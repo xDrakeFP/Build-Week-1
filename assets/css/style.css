@@ -1,5 +1,9 @@
+main {
+  background-color: black;
+}
+
 .option-button {
-  padding: 12px 24px;
+  padding: 12px 12px;
   width: 200px;
   height: 50px;
   text-align: center;
@@ -7,10 +11,11 @@
   color: white;
   background-color: transparent;
   border-radius: 999px;
-  border: 3px solid transparent;
+  border: 4px solid transparent;
+  border-image: linear-gradient(180deg, white, gray);
 }
 .option-button:hover,
 .option-button.selected {
-  background: linear-gradient(180deg, #c8009c, #ff00c8);
+  background: linear-gradient(180deg, #ff00c8, #c8009c);
   border-color: transparent;
 }
