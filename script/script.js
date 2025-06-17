@@ -242,7 +242,6 @@ const messageWrong = [
   "for further instructions.",
 ];
 
-const score = 2;
 const passed = score >= 6;
 
 const messageSelected = passed ? messageCorrect : messageWrong;
