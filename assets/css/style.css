@@ -187,3 +187,59 @@ div h3 {
 .center {
   text-align: center;
 }
+.center h1 {
+  font-weight: bold;
+}
+.infoButton button {
+  background-color: #00ffff;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  color: #0b113b;
+  font-size: 1.5em;
+  border: none;
+  padding: 15px 60px;
+  box-shadow: 0px -1px 15px 5px rgba(0, 255, 255, 0.55);
+  -webkit-box-shadow: 0px -1px 15px 5px rgba(0, 255, 255, 0.55);
+  -moz-box-shadow: 0px -1px 15px 5px rgba(0, 255, 255, 0.55);
+  cursor: pointer;
+}
+.infoButton button:hover {
+  box-shadow: 0px -1px 19px 5px rgba(0, 255, 255, 0.55);
+  -webkit-box-shadow: 0px -1px 19px 5px rgba(0, 255, 255, 0.55);
+  -moz-box-shadow: 0px -1px 19px 5px rgba(0, 255, 255, 0.55);
+}
+.rate button {
+  font-weight: bold;
+  font-size: 1.5em;
+  padding: 15px 60px;
+  background-color: transparent;
+  border: 3px solid white;
+  color: white;
+  box-shadow: 0px 0px 16px 11px rgba(55, 71, 168, 0.18);
+}
+.rate button :hover {
+  box-shadow: 0px -1px 19px 5px rgb(255, 255, 255);
+  -webkit-box-shadow: 0px -1px 19px 5px rgba(0, 255, 255, 0.55);
+  -moz-box-shadow: 0px -1px 19px 5px rgba(0, 255, 255, 0.55);
+}
+.correct {
+  float: inline-start;
+}
+.wrong {
+  position: absolute;
+  top: 45%;
+  right: 13%;
+}
+.wrong h2 {
+  font-size: 3em;
+  text-align: left;
+  color: #ded2e2;
+}
+.correct h2 {
+  font-size: 3em;
+  text-align: left;
+  color: white;
+}
+h2 span {
+  text-align: left;
+}
