@@ -129,3 +129,31 @@ input {
 .checkbox-button__control {
   transform: scale(0.75);
 }
+
+h3 {
+  color: whitesmoke;
+  text-align: center;
+  font-size: 1.7em;
+  font-family: poppins;
+  margin-bottom: 2em;
+  font-weight: normal;
+}
+#question-counter {
+  color: white;
+  font-family: poppins;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.form {
+  border-color: #c2128d;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  width: 80%;
+  margin-bottom: 40px;
+}
+::placeholder {
+  font-size: 20px;
+  padding-left: 15px;
+}
