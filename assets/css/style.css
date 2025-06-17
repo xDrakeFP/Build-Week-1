@@ -247,3 +247,19 @@ div h3 {
 h2 span {
   text-align: left;
 }
+
+#question-text {
+  text-align: center;
+  color: white;
+}
+.answerButton {
+  text-align: center;
+}
+#confirm-button {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  border-radius: 10px;
+  font-size: large;
+  padding: 5px 10px;
+}
