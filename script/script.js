@@ -1,9 +1,9 @@
-const checkbox = document.getElementById("checkbox");
+const checkboxWelcome = document.getElementById("choice1-1");
 
-const button = document.getElementsByClassName("blueButton")[0];
+const buttonWelcome = document.getElementById("welcomeButton");
 
-checkbox.addEventListener("change", () => {
-  button.disabled = !checkbox.checked;
+checkboxWelcome.addEventListener("change", () => {
+  buttonWelcome.disabled = !checkboxWelcome.checked; //
 });
 
 //  Array che conterrà le domande mescolate
