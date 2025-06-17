@@ -134,7 +134,7 @@ h1 + h3 {
   color: whitesmoke;
   /* text-align: center; */
   font-size: 1.7em;
-  font-family: poppins;
+  font-family: "Poppins";
   margin-bottom: 2em;
   font-weight: normal;
 }
@@ -142,7 +142,7 @@ div + h3 {
   color: whitesmoke;
   /* text-align: center; */
   font-size: 1.7em;
-  font-family: poppins;
+  font-family: "Poppins";
   margin-bottom: 2em;
   font-weight: normal;
 }
@@ -150,13 +150,13 @@ div h3 {
   color: whitesmoke;
   text-align: center;
   font-size: 1.7em;
-  font-family: poppins;
+  font-family: "Poppins";
   margin-top: 0;
   font-weight: normal;
 }
 #question-counter {
   color: white;
-  font-family: poppins;
+  font-family: "Poppins";
   text-align: center;
   font-weight: bold;
   letter-spacing: 2px;
@@ -179,10 +179,9 @@ div h3 {
 #question-counter span {
   color: #c2128d;
 }
-.correct h2 p {
-}
+
 #doughnut {
-  width: 50vw;
+  width: 40vw;
 }
 .center {
   text-align: center;
@@ -224,22 +223,27 @@ div h3 {
 }
 .correct {
   float: inline-start;
+  text-align: left;
 }
 .wrong {
+  text-align: right;
   position: absolute;
   top: 45%;
-  right: 13%;
+  right: 20%;
 }
 .wrong h2 {
   font-size: 3em;
-  text-align: left;
+  text-align: right;
   color: #ded2e2;
+  margin-bottom: 0;
 }
 .correct h2 {
   font-size: 3em;
   text-align: left;
   color: white;
+  margin-bottom: 0;
 }
+
 h2 span {
   text-align: left;
 }
