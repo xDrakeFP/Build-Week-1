@@ -132,7 +132,7 @@ input {
 
 h3 {
   color: whitesmoke;
-  text-align: center;
+  /* text-align: center; */
   font-size: 1.7em;
   font-family: poppins;
   margin-bottom: 2em;
@@ -153,6 +153,8 @@ h3 {
   border-left: none;
   width: 80%;
   margin-bottom: 40px;
+  color: white;
+  font-size: large;
 }
 ::placeholder {
   font-size: 20px;
