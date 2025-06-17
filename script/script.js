@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //   funzione per terminare il quiz e mostrare i risultati
   const endQuiz = () => {
-    alert(`Quiz terminato! il tuo punteggio: ${score} su ${questions.length}`);
+    window.location.href = "results.html";
   };
 
   //   Funzione principale per visualizzare la domanda corrente e le sue opzioni
