@@ -1,19 +1,19 @@
 main {
-  background: black;
+  background-color: #252b50;
 }
 .option-button {
   padding: 12px 24px;
-  min-width: 100px; /* Uniforma la larghezza minima */
+  width: 200px;
+  height: 50px;
   text-align: center;
   font-size: 1em;
   color: white;
-  background: transparent;
-  border: 2px solid;
-  border-image: linear-gradient(135deg, #8080ff, #c080ff) 1;
+  background-color: transparent;
   border-radius: 999px;
-  cursor: pointer;
-  white-space: nowrap; /* Evita a capo indesiderato */
+  border: 3px solid transparent;
 }
-.option-button:hover {
-  background: linear-gradient(135deg, #c8009c, #ff00c8);
+.option-button:hover,
+.option-button.selected {
+  background: linear-gradient(180deg, #c8009c, #ff00c8);
+  border-color: transparent;
 }
