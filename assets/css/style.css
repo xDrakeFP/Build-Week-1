@@ -1,5 +1,18 @@
 body {
   font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+}
+
+main {
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+header img {
+  width: 200px;
+  margin: 35px 300px;
 }
 
 h1,
