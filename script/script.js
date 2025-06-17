@@ -1,3 +1,11 @@
+const checkboxWelcome = document.getElementById("choice1-1");
+
+const buttonWelcome = document.getElementById("welcomeButton");
+
+checkboxWelcome.addEventListener("change", () => {
+  buttonWelcome.disabled = !checkboxWelcome.checked; //
+});
+
 //  Array che conterrà le domande mescolate
 let shuffledQuestions = [];
 
