@@ -249,7 +249,7 @@ div h3 {
   font-size: 19px;
   padding-left: 15px;
 }
-#question-counter span {
+.question-counter-top span {
   color: #c2128d;
 }
 
@@ -307,7 +307,7 @@ div h3 {
 }
 
 /* classe da aggiungere ai bottoni creati in js */
-.buttonRisposte {
+.option-button {
   font-family: "Poppins";
   display: inline;
   width: 35%;
@@ -324,7 +324,7 @@ div h3 {
   border: 3px solid transparent;
 }
 
-.buttonRisposte:hover {
+.option-button:hover {
   cursor: pointer;
   background: #c2128d;
   background: linear-gradient(
@@ -335,11 +335,13 @@ div h3 {
   background-clip: padding-box;
   top: 200px;
 }
+
 #timer {
   display: none;
 }
 #canvasContainer {
   float: inline-end;
   width: 300px;
-  height: 00px;
+  height: 300px;
+  margin-right: 100px;
 }
