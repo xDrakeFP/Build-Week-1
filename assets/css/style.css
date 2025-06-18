@@ -15,6 +15,76 @@ header img {
   margin: 35px 300px;
 }
 
+h2,
+h3 {
+  color: white;
+}
+button {
+  background-color: transparent;
+  border: 3px solid white;
+  color: white;
+  width: 260px;
+  height: 70px;
+  font-weight: 600;
+  font-size: 25px;
+  border-radius: 0;
+  outline: none;
+  border-color: #e7e7eb;
+  box-shadow: 0 0 20px rgba(85, 134, 240, 0.445);
+  display: block;
+  margin: auto;
+}
+.rate {
+  margin-top: 300px;
+}
+.answers {
+  text-align: center;
+  line-height: 0.5;
+}
+.correct,
+.wrong {
+  width: 400px;
+  margin: 0 auto;
+  height: 300px;
+  font-size: 30px;
+  padding: 0;
+}
+.results {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 40px;
+  margin-top: 200px;
+}
+.correct {
+  float: left;
+  text-align: center;
+}
+.wrong {
+  float: right;
+  text-align: center;
+}
+.doughnutContainer {
+  float: none;
+  text-align: center;
+  display: inline-block;
+}
+h2 {
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+h2 span {
+  font-weight: 700;
+}
+h3 {
+  font-weight: 300;
+}
+p {
+  font-weight: 300;
+  font-size: 16px;
+  padding: 0;
+  margin-top: 0;
+}
 h1 {
   color: white;
   font-size: 5em;

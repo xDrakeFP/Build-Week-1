@@ -17,7 +17,6 @@
       <div class="logo">
         <img src="./assets/img/epicode_logo.png" alt="Logo di Epicode" />
       </div>
-      <div id="Timer"></div>
     </header>
     <main>
       <section class="answerButton">
@@ -34,11 +33,16 @@
           Conferma Risposta
         </button>
       </section>
+      <div style="width: 300px; height: 300px">
+        <canvas id="canvasTimer"></canvas>
+      </div>
       <div id="question-counter" class="question-counter-top">
         QUESTION 1 <span>/ 10</span>
       </div>
+      <div id="timer"></div>
     </main>
     <footer></footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./script/script.js"></script>
   </body>
 </html>
