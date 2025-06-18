@@ -502,17 +502,38 @@ document.addEventListener("DOMContentLoaded", () => {
     // codice solo per feedback.html
     const stelle = document.getElementsByClassName("star");
 
+    let punteggioGen = 0; // Uso punteggio per tenere conto di quante stelle vengono cliccate
     for (let i = 0; i < stelle.length; i++) {
-      // Aggiungo click ad ogni stella
-      stelle[i].addEventListener("click", function () {
-        const punteggio = i + 1; // Uso punteggio per tenere conto di che stella viene cliccata, e i+1 perché la prima stella ha 0 come index
-
+      // Aggiungo listener ad ogni stella
+      stelle[i].addEventListener("mouseenter", function () {
+        // Ciclo per listener per Hover
+        const punteggioHover = i + 1; //
         for (let j = 0; j < stelle.length; j++) {
-          // ciclo le stelle per controllare a quante aggiungere la classe attivo
-          if (j < punteggio) {
-            stelle[j].classList.add("attivo"); // aggiungo classe a tutte le stelle che hanno index minore o uguale di punteggio
+          if (j >= punteggioGen && j < punteggioHover) {
+            // Aggiungo la classe solo alle stelle dopo quelle già cliccate e fino a quella in hover
+            stelle[j].classList.add("hoverstelle");
+          } else {
+            stelle[j].classList.remove("hoverstelle"); // Rimuovo la classe da tutte le altre
+          }
+        }
+      });
+      stelle[i].addEventListener("mouseleave", () => {
+        // Rimuovo hover a tutte le stelle quando il mouse esce da una stella
+        for (let j = 0; j < stelle.length; j++) {
+          stelle[j].classList.remove("hoverstelle");
+        }
+      });
+      stelle[i].addEventListener("click", function () {
+        // Ciclo per listener di click
+        const punteggioStelle = i + 1;
+        punteggioGen = punteggioStelle;
+        for (let j = 0; j < stelle.length; j++) {
+          if (j < punteggioStelle) {
+            stelle[j].classList.add("attivo"); // Aggiungo la classe a tutte le stelle fino a quella cliccata
+            stelle[j].classList.remove("hoverstelle"); // Rimuovo hover
           } else {
             stelle[j].classList.remove("attivo"); // rimuovo la classe dalle stelle che sono fuori range
+            stelle[j].classList.remove("hoverstelle");
           }
         }
       });
