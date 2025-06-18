@@ -42,10 +42,6 @@ button:hover {
 .rate {
   margin-top: 100px;
 }
-body {
-  background-image: url(/Build-Week-1/assets/img/bg.jpg);
-  background-size: cover;
-}
 .answers {
   text-align: center;
   
