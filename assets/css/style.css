@@ -37,10 +37,7 @@ button {
 .rate {
   margin-top: 300px;
 }
-body {
-  background-image: url(/Build-Week-1/assets/img/bg.jpg);
-  background-size: cover;
-}
+
 .answers {
   text-align: center;
   line-height: 0.5;
