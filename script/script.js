@@ -287,6 +287,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       // aggiornamento timer
       tempoRimanente = 61;
+
       // Resetta lo stato per la nuova domanda:
       // Nessuna opzione è ancora stata selezionata
       selectedOption = null;
@@ -318,6 +319,7 @@ document.addEventListener("DOMContentLoaded", () => {
         button.classList.add("option-button");
         //   impostazione testo
         button.innerHTML = option;
+
         //   aggiuta event listener al bottone
         button.addEventListener("click", () =>
           handleOptionSelection(button, option)
@@ -325,10 +327,11 @@ document.addEventListener("DOMContentLoaded", () => {
         //   aggiunta bottone al DOM
         optionsContainer.appendChild(button);
       });
+
       // Aggiorna il contatore delle domande
-      questionCounterElement.textContent = `QUESTION ${
+      questionCounterElement.innerHTML = `<p> QUESTION ${
         currentQuestionIndex + 1
-      } / ${questions.length} `;
+      }<span> / ${questions.length}</span></p> `;
     };
     // Funzione per gestire la conferma della risposta.
     const confirmAnswer = () => {
