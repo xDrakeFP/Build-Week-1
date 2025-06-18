@@ -249,7 +249,7 @@ div h3 {
   font-size: 19px;
   padding-left: 15px;
 }
-.questionCounterElement:last-child {
+span {
   color: #c2128d;
 }
 
