@@ -15,6 +15,9 @@ header img {
   margin: 35px 300px;
 }
 
+.logo {
+  display: inline-block;
+}
 h2,
 h3 {
   color: white;
@@ -79,6 +82,7 @@ h3 {
 
 .wrong {
   text-align: right;
+  color: #ded2e2;
 }
 
 .correct {
@@ -316,13 +320,15 @@ span {
 #question-text {
   text-align: center;
   color: white;
+  font-size: 3em;
 }
 .answerButton {
   text-align: center;
+  margin-top: 200px;
 }
 #confirm-button {
   font-family: "Poppins";
-  font-size: 1.5em;
+  font-size: 1.1em;
   font-weight: bold;
   width: 35%;
   height: 70px;
@@ -376,8 +382,34 @@ span {
 }
 #canvasContainer {
   float: inline-end;
-  width: 220px;
-  height: 220px;
+  width: 150px;
+  height: 150px;
   margin-right: 400px;
+  margin-top: 50px;
   vertical-align: top;
+}
+a {
+  text-decoration: none;
+  color: #0b113b;
+}
+a:visited {
+  text-decoration: none;
+  color: #0b113b;
+}
+svg {
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+.attivo {
+  fill: aqua;
+}
+.hoverstelle {
+  fill: rgb(3, 118, 118);
+}
+.checkbox-button__label {
+  color: white;
+  font-weight: bold;
+}
+b {
+  font-weight: bold;
 }
