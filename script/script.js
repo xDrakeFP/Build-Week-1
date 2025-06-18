@@ -20,12 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       return `${minutiFormat}:${secondiFormat}`;
     };
-
+    let tempoRimanente = 0;
     const timer = (secondi) => {
       // Funzione effettiva del timer
       const timer = document.getElementById("timer");
 
-      let tempoRimanente = secondi; // Inizializzo la variabile che userò per contare i secondi rimanenti
+      tempoRimanente = secondi; // Inizializzo la variabile che userò per contare i secondi rimanenti
 
       timer.textContent = formattaTempo(tempoRimanente); // Formatto il tempo e lo inserisco nel div #timer
       const canvasTime = document.getElementById("canvasTimer");
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
         1000 // L'intervallo che gli passo (1000ms = 1 secondo)
       );
     };
-
+    timer(60);
     //   Funzione per mescolare l'array e randomizzata l'ordine delle domande e delle opzioni
     const shuffleArray = (questions) => {
       for (let i = questions.length - 1; i > 0; i--) {
@@ -285,7 +285,8 @@ document.addEventListener("DOMContentLoaded", () => {
         endQuiz();
         return;
       }
-
+      // aggiornamento timer
+      tempoRimanente = 61;
       // Resetta lo stato per la nuova domanda:
       // Nessuna opzione è ancora stata selezionata
       selectedOption = null;
@@ -298,6 +299,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const currentQuestion = randomQuestions[currentQuestionIndex];
       // Aggiorniamo il testo della domanda
       questionTextElement.innerHTML = currentQuestion.question;
+
       // pulizia del contenitore delle opzioni bottoni della domanda precedente
       optionsContainer.innerHTML = "";
       // Combina la risposta corretta  con quelle incorette in un unico array
@@ -338,7 +340,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const currentQuestion = randomQuestions[currentQuestionIndex];
       // La risposta è corretta???
       const isCorrect = selectedOption === currentQuestion.correct_answer;
-      if (isCorrect) {
+      if (isCorrect && tempoRimanente > 0) {
         score++;
         console.log("Risposta Corretta");
         console.log(score);
