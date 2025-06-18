@@ -44,7 +44,6 @@ button:hover {
 }
 .answers {
   text-align: center;
-  
 }
 .answers h1,
 h3 {
@@ -55,9 +54,11 @@ h3 {
   font-weight: 600;
   font-size: 50px;
 }
-.answers h3{
+
+.answers h3 {
   font-size: 30px;
 }
+
 .correct,
 .doughnutContainer,
 .wrong {
@@ -67,13 +68,23 @@ h3 {
   vertical-align: middle;
   line-height: normal;
 }
+
 .wrong,
 .correct {
   font-size: 35px;
   padding-top: 60px;
-  width: 350px;
+  width: 250px;
   height: 300px;
 }
+
+.wrong {
+  text-align: right;
+}
+
+.correct {
+  text-align: left;
+}
+
 .results {
   width: 100%;
   text-align: center;
@@ -81,13 +92,11 @@ h3 {
   white-space: nowrap;
 }
 .doughnutContainer {
-  width: 400px;
-  height: 400px;
+  width: 430px;
+  height: 430px;
 }
 #doughnut {
   display: inline-block;
-  width: 300px;
-  height: 300px;
 }
 a {
   text-decoration: none;
