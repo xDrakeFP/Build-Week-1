@@ -17,6 +17,9 @@
       <div class="logo">
         <img src="./assets/img/epicode_logo.png" alt="Logo di Epicode" />
       </div>
+      <div id="canvasContainer">
+        <canvas id="canvasTimer"></canvas>
+      </div>
     </header>
     <main>
       <div style="width: 300px; height: 300px">
@@ -25,7 +28,12 @@
       <section class="answerButton">
         <h2 id="question-text">Loading question...</h2>
 
-        <div id="options-container" class="options-grid"></div>
+        <div id="options-container" class="options-grid">
+          <button class="buttonRisposte"></button>
+          <button class="buttonRisposte"></button>
+          <button class="buttonRisposte"></button>
+          <button class="buttonRisposte"></button>
+        </div>
 
         <button id="confirm-button" class="confirm-button">
           Conferma Risposta
@@ -33,7 +41,7 @@
       </section>
 
       <div id="question-counter" class="question-counter-top">
-        QUESTION 1 / 10
+        QUESTION 1 <span>/ 10</span>
       </div>
       <div id="timer"></div>
     </main>

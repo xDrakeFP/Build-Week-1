@@ -440,7 +440,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ctx.textAlign = "center"; //allinea testo al centro orizzontalmente
             ctx.textBaseline = "middle"; //allinea il testo al centro verticalmente
 
-            const lineHeight = 36; //altezza in pixel fra le righe
+            const lineHeight = 22; //altezza in pixel fra le righe
             const totalHeight = lineHeight * lines.length; //altezza totale del  blocco di testo
             const startY = height / 2 - totalHeight / 2; //calcola dove iniziare a scrivere
 
@@ -449,16 +449,16 @@ document.addEventListener("DOMContentLoaded", () => {
             lines.forEach((line, i) => {
               if (i === 0) {
                 // prima linea
-                ctx.font = "bold 2em sans-serif";
-                ctx.fillStyle = "#000";
+                ctx.font = "bold 1.3em sans-serif";
+                ctx.fillStyle = "#FFF";
               } else if (i === 1) {
                 // seconda linea
-                ctx.font = "bold 2em sans-serif";
+                ctx.font = "bold 1.3em sans-serif";
                 ctx.fillStyle = "#00FFFF";
               } else {
                 //resto del paragrafo
-                ctx.font = "1.5em sans-serif";
-                ctx.fillStyle = "#000";
+                ctx.font = "0.9em sans-serif";
+                ctx.fillStyle = "#FFF";
               }
               //disegna il testo al centro della orizzontale usando la Y calcolata per il verticale
               ctx.fillText(line, width / 2, startY + i * lineHeight);
@@ -490,11 +490,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const correct = score * 10;
       document.getElementById(
         "correctH2"
-      ).innerHTML = `Correct <br /> ${correct}%`;
+      ).innerHTML = `Correct <br /> <b style="font-weight:700">${correct}%</b>`;
       document.getElementById("correctP").innerText = `${score}/10 questions.`;
-      document.getElementById("wrongH2").innerHTML = `Wrong <br /> ${
+      document.getElementById(
+        "wrongH2"
+      ).innerHTML = `Wrong <br /> <b style="font-weight:700">${
         100 - correct
-      }%`;
+      }%</b>`;
       document.getElementById("wrongP").innerText = `${
         10 - score
       }/10 questions.`;
@@ -505,17 +507,38 @@ document.addEventListener("DOMContentLoaded", () => {
     // codice solo per feedback.html
     const stelle = document.getElementsByClassName("star");
 
+    let punteggioGen = 0; // Uso punteggio per tenere conto di quante stelle vengono cliccate
     for (let i = 0; i < stelle.length; i++) {
-      // Aggiungo click ad ogni stella
-      stelle[i].addEventListener("click", function () {
-        const punteggio = i + 1; // Uso punteggio per tenere conto di che stella viene cliccata, e i+1 perché la prima stella ha 0 come index
-
+      // Aggiungo listener ad ogni stella
+      stelle[i].addEventListener("mouseenter", function () {
+        // Ciclo per listener per Hover
+        const punteggioHover = i + 1; //
         for (let j = 0; j < stelle.length; j++) {
-          // ciclo le stelle per controllare a quante aggiungere la classe attivo
-          if (j < punteggio) {
-            stelle[j].classList.add("attivo"); // aggiungo classe a tutte le stelle che hanno index minore o uguale di punteggio
+          if (j >= punteggioGen && j < punteggioHover) {
+            // Aggiungo la classe solo alle stelle dopo quelle già cliccate e fino a quella in hover
+            stelle[j].classList.add("hoverstelle");
+          } else {
+            stelle[j].classList.remove("hoverstelle"); // Rimuovo la classe da tutte le altre
+          }
+        }
+      });
+      stelle[i].addEventListener("mouseleave", () => {
+        // Rimuovo hover a tutte le stelle quando il mouse esce da una stella
+        for (let j = 0; j < stelle.length; j++) {
+          stelle[j].classList.remove("hoverstelle");
+        }
+      });
+      stelle[i].addEventListener("click", function () {
+        // Ciclo per listener di click
+        const punteggioStelle = i + 1;
+        punteggioGen = punteggioStelle;
+        for (let j = 0; j < stelle.length; j++) {
+          if (j < punteggioStelle) {
+            stelle[j].classList.add("attivo"); // Aggiungo la classe a tutte le stelle fino a quella cliccata
+            stelle[j].classList.remove("hoverstelle"); // Rimuovo hover
           } else {
             stelle[j].classList.remove("attivo"); // rimuovo la classe dalle stelle che sono fuori range
+            stelle[j].classList.remove("hoverstelle");
           }
         }
       });

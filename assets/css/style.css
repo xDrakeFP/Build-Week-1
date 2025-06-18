@@ -33,40 +33,73 @@ button {
   box-shadow: 0 0 20px rgba(85, 134, 240, 0.445);
   display: block;
   margin: auto;
+  cursor: pointer;
+}
+button:hover {
+  box-shadow: 0 0 30px rgba(77, 125, 230, 0.445);
+  filter: brightness(1.2);
 }
 .rate {
-  margin-top: 300px;
+  margin-top: 100px;
 }
 .answers {
   text-align: center;
-  line-height: 0.5;
 }
-.correct,
-.wrong {
-  width: 400px;
-  margin: 0 auto;
-  height: 300px;
+.answers h1,
+h3 {
+  margin: 5px;
+  font-size: 40px;
+}
+.answers h1 {
+  font-weight: 600;
+  font-size: 50px;
+}
+
+.answers h3 {
   font-size: 30px;
-  padding: 0;
 }
+
+.correct,
+.doughnutContainer,
+.wrong {
+  display: inline-block;
+  width: 300px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.wrong,
+.correct {
+  font-size: 35px;
+  padding-top: 60px;
+  width: 250px;
+  height: 300px;
+}
+
+.wrong {
+  text-align: right;
+}
+
+.correct {
+  text-align: left;
+}
+
 .results {
   width: 100%;
-  overflow: hidden;
-  margin-bottom: 40px;
-  margin-top: 200px;
-}
-.correct {
-  float: left;
   text-align: center;
-}
-.wrong {
-  float: right;
-  text-align: center;
+  margin-top: 70px;
+  white-space: nowrap;
 }
 .doughnutContainer {
-  float: none;
-  text-align: center;
+  width: 430px;
+  height: 430px;
+}
+#doughnut {
   display: inline-block;
+}
+a {
+  text-decoration: none;
 }
 h2 {
   font-weight: 300;
@@ -198,4 +231,153 @@ input {
 
 .checkbox-button__control {
   transform: scale(0.75);
+}
+
+h1 + h3 {
+  color: whitesmoke;
+  font-size: 1.7em;
+  font-family: "Poppins";
+  margin-bottom: 2em;
+  font-weight: normal;
+}
+div + h3 {
+  color: whitesmoke;
+  font-size: 1.7em;
+  font-family: "Poppins";
+  margin-bottom: 2em;
+  font-weight: normal;
+}
+div h3 {
+  color: whitesmoke;
+  text-align: center;
+  font-size: 1.7em;
+  font-family: "Poppins";
+  margin-top: 0;
+  font-weight: normal;
+}
+#question-counter {
+  color: white;
+  font-family: "Poppins";
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-top: 50px;
+}
+.form {
+  border-color: #c2128d;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  width: 80%;
+  margin-bottom: 40px;
+  color: white;
+  font-size: large;
+}
+::placeholder {
+  font-size: 19px;
+  padding-left: 15px;
+}
+span {
+  color: #c2128d;
+}
+
+#doughnut {
+  width: 40vw;
+}
+.center {
+  text-align: center;
+}
+.center h1 {
+  font-weight: bold;
+}
+.infoButton button {
+  background-color: #00ffff;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  color: #0b113b;
+  font-size: 1.5em;
+  border: none;
+  padding: 15px 60px;
+  box-shadow: 0px -1px 15px 5px rgba(0, 255, 255, 0.55);
+  -webkit-box-shadow: 0px -1px 15px 5px rgba(0, 255, 255, 0.55);
+  -moz-box-shadow: 0px -1px 15px 5px rgba(0, 255, 255, 0.55);
+  cursor: pointer;
+}
+.infoButton button:hover {
+  box-shadow: 0px -1px 19px 5px rgba(0, 255, 255, 0.55);
+  -webkit-box-shadow: 0px -1px 19px 5px rgba(0, 255, 255, 0.55);
+  -moz-box-shadow: 0px -1px 19px 5px rgba(0, 255, 255, 0.55);
+}
+
+#options-container {
+  margin-top: 50px;
+}
+
+#question-text {
+  text-align: center;
+  color: white;
+}
+.answerButton {
+  text-align: center;
+}
+#confirm-button {
+  font-family: "Poppins";
+  font-size: 1.5em;
+  font-weight: bold;
+  width: 35%;
+  height: 70px;
+  border-radius: 40px;
+  color: white;
+  background-color: rgb(255 255 255 / 10%);
+  padding: 5px 10px;
+  margin-top: 30px;
+  border: 3px solid;
+}
+
+/* classe da aggiungere ai bottoni creati in js */
+.option-button {
+  font-family: "Poppins";
+  display: inline;
+  width: 35%;
+  height: 70px;
+  cursor: pointer;
+  background-color: rgb(255 255 255 / 10%);
+  color: white;
+  margin: 10px 20px;
+  border-image: linear-gradient(to right, white, rgb(255 255 255 / 10%)) 1;
+  border-radius: 40px;
+  padding: 10px 20px;
+  background: linear-gradient(#0f0f2b, #0f0f2b) padding-box,
+    linear-gradient(170deg, white, rgb(255 255 255 / 10%)) border-box;
+  border: 3px solid transparent;
+}
+
+.option-button:hover {
+  cursor: pointer;
+  background: #c2128d;
+  background: linear-gradient(
+    180deg,
+    rgba(194, 18, 141, 1) 73%,
+    rgba(194, 18, 141, 0.71) 100%
+  );
+  background-clip: padding-box;
+  top: 200px;
+}
+
+.option-button.selected {
+  background: linear-gradient(
+    180deg,
+    rgba(194, 18, 141, 1) 73%,
+    rgba(194, 18, 141, 0.71) 100%
+  );
+}
+#timer {
+  display: none;
+}
+#canvasContainer {
+  float: inline-end;
+  width: 220px;
+  height: 220px;
+  margin-right: 400px;
+  vertical-align: top;
 }
