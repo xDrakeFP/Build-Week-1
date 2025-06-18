@@ -249,7 +249,7 @@ div h3 {
   font-size: 19px;
   padding-left: 15px;
 }
-.question-counter-top span {
+.questionCounterElement:last-child {
   color: #c2128d;
 }
 
@@ -336,6 +336,13 @@ div h3 {
   top: 200px;
 }
 
+.option-button.selected {
+  background: linear-gradient(
+    180deg,
+    rgba(194, 18, 141, 1) 73%,
+    rgba(194, 18, 141, 0.71) 100%
+  );
+}
 #timer {
   display: none;
 }
