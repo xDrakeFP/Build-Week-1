@@ -331,7 +331,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Aggiorna il contatore delle domande
       questionCounterElement.innerHTML = `<p> QUESTION ${
         currentQuestionIndex + 1
-      }<span>/ ${questions.length}</span></p> `;
+      }<span> / ${questions.length}</span></p> `;
     };
     // Funzione per gestire la conferma della risposta.
     const confirmAnswer = () => {
