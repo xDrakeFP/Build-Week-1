@@ -40,38 +40,66 @@ button:hover {
   filter: brightness(1.2);
 }
 .rate {
-  margin-top: 300px;
+  margin-top: 100px;
 }
 .answers {
   text-align: center;
-  line-height: 0.5;
 }
-.correct,
-.wrong {
-  width: 400px;
-  margin: 0 auto;
-  height: 300px;
+.answers h1,
+h3 {
+  margin: 5px;
+  font-size: 40px;
+}
+.answers h1 {
+  font-weight: 600;
+  font-size: 50px;
+}
+
+.answers h3 {
   font-size: 30px;
-  padding: 0;
 }
+
+.correct,
+.doughnutContainer,
+.wrong {
+  display: inline-block;
+  width: 300px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.wrong,
+.correct {
+  font-size: 35px;
+  padding-top: 60px;
+  width: 250px;
+  height: 300px;
+}
+
+.wrong {
+  text-align: right;
+}
+
+.correct {
+  text-align: left;
+}
+
 .results {
   width: 100%;
-  overflow: hidden;
-  margin-bottom: 40px;
-  margin-top: 200px;
-}
-.correct {
-  float: left;
   text-align: center;
-}
-.wrong {
-  float: right;
-  text-align: center;
+  margin-top: 70px;
+  white-space: nowrap;
 }
 .doughnutContainer {
-  float: none;
-  text-align: center;
+  width: 430px;
+  height: 430px;
+}
+#doughnut {
   display: inline-block;
+}
+a {
+  text-decoration: none;
 }
 h2 {
   font-weight: 300;

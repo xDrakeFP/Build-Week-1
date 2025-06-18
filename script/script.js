@@ -437,7 +437,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ctx.textAlign = "center"; //allinea testo al centro orizzontalmente
             ctx.textBaseline = "middle"; //allinea il testo al centro verticalmente
 
-            const lineHeight = 36; //altezza in pixel fra le righe
+            const lineHeight = 22; //altezza in pixel fra le righe
             const totalHeight = lineHeight * lines.length; //altezza totale del  blocco di testo
             const startY = height / 2 - totalHeight / 2; //calcola dove iniziare a scrivere
 
@@ -446,16 +446,16 @@ document.addEventListener("DOMContentLoaded", () => {
             lines.forEach((line, i) => {
               if (i === 0) {
                 // prima linea
-                ctx.font = "bold 2em sans-serif";
-                ctx.fillStyle = "#000";
+                ctx.font = "bold 1.3em sans-serif";
+                ctx.fillStyle = "#FFF";
               } else if (i === 1) {
                 // seconda linea
-                ctx.font = "bold 2em sans-serif";
+                ctx.font = "bold 1.3em sans-serif";
                 ctx.fillStyle = "#00FFFF";
               } else {
                 //resto del paragrafo
-                ctx.font = "1.5em sans-serif";
-                ctx.fillStyle = "#000";
+                ctx.font = "0.9em sans-serif";
+                ctx.fillStyle = "#FFF";
               }
               //disegna il testo al centro della orizzontale usando la Y calcolata per il verticale
               ctx.fillText(line, width / 2, startY + i * lineHeight);
@@ -487,11 +487,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const correct = score * 10;
       document.getElementById(
         "correctH2"
-      ).innerHTML = `Correct <br /> ${correct}%`;
+      ).innerHTML = `Correct <br /> <b style="font-weight:700">${correct}%</b>`;
       document.getElementById("correctP").innerText = `${score}/10 questions.`;
-      document.getElementById("wrongH2").innerHTML = `Wrong <br /> ${
+      document.getElementById(
+        "wrongH2"
+      ).innerHTML = `Wrong <br /> <b style="font-weight:700">${
         100 - correct
-      }%`;
+      }%</b>`;
       document.getElementById("wrongP").innerText = `${
         10 - score
       }/10 questions.`;
