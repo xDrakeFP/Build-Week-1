@@ -12,13 +12,16 @@
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
-  <body>
+  <body id="benchmark">
     <header>
       <div class="logo">
         <img src="./assets/img/epicode_logo.png" alt="Logo di Epicode" />
       </div>
     </header>
     <main>
+      <div style="width: 300px; height: 300px">
+        <canvas id="canvasTimer"></canvas>
+      </div>
       <section class="answerButton">
         <h2 id="question-text">Loading question...</h2>
 
@@ -28,9 +31,7 @@
           Conferma Risposta
         </button>
       </section>
-      <div style="width: 300px; height: 300px">
-        <canvas id="canvasTimer"></canvas>
-      </div>
+
       <div id="question-counter" class="question-counter-top">
         QUESTION 1 / 10
       </div>
