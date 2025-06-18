@@ -33,9 +33,14 @@ button {
   box-shadow: 0 0 20px rgba(85, 134, 240, 0.445);
   display: block;
   margin: auto;
+  cursor: pointer;
+}
+button:hover {
+  box-shadow: 0 0 30px rgba(77, 125, 230, 0.445);
+  filter: brightness(1.2);
 }
 .rate {
-  margin-top: 300px;
+  margin-top: 100px;
 }
 body {
   background-image: url(/Build-Week-1/assets/img/bg.jpg);
@@ -43,34 +48,53 @@ body {
 }
 .answers {
   text-align: center;
-  line-height: 0.5;
+  
+}
+.answers h1,
+h3 {
+  margin: 5px;
+  font-size: 40px;
+}
+.answers h1 {
+  font-weight: 600;
+  font-size: 50px;
+}
+.answers h3{
+  font-size: 30px;
 }
 .correct,
+.doughnutContainer,
 .wrong {
-  width: 400px;
-  margin: 0 auto;
+  display: inline-block;
+  width: 300px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: normal;
+}
+.wrong,
+.correct {
+  font-size: 35px;
+  padding-top: 60px;
+  width: 350px;
   height: 300px;
-  font-size: 30px;
-  padding: 0;
 }
 .results {
   width: 100%;
-  overflow: hidden;
-  margin-bottom: 40px;
-  margin-top: 200px;
-}
-.correct {
-  float: left;
   text-align: center;
-}
-.wrong {
-  float: right;
-  text-align: center;
+  margin-top: 70px;
+  white-space: nowrap;
 }
 .doughnutContainer {
-  float: none;
-  text-align: center;
+  width: 400px;
+  height: 400px;
+}
+#doughnut {
   display: inline-block;
+  width: 300px;
+  height: 300px;
+}
+a {
+  text-decoration: none;
 }
 h2 {
   font-weight: 300;
