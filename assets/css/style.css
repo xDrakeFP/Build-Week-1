@@ -421,3 +421,17 @@ b {
     rgba(194, 18, 141, 0.71) 100%
   );
 }
+.extra {
+  text-align: center;
+}
+#difficulties {
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+.spazio {
+  margin-top: 150px;
+}
+.difficulty {
+  display: inline-block;
+  margin-right: 20px;
+}
