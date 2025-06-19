@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
           datasets: [
             {
               data: [secondi - tempoRimanente, tempoRimanente], //array con valori per il grafico 1 secondi passati 2 secondi rimanenti
-              cutout: "70%", //quanto spazio lasciare al centro
+              cutout: "80%", //quanto spazio lasciare al centro
               backgroundColor: [
                 "#FFFFFF30", //colore di secondi passati
                 "#00FFFF", //colore di secondi rimanenti
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
               ctx.textAlign = "center"; //allinea testo al centro orizzontalmente
               ctx.textBaseline = "middle"; //allinea il testo al centro verticalmente
 
-              const lineHeight = 52; //altezza in pixel fra le righe
+              const lineHeight = 32; //altezza in pixel fra le righe
               const totalHeight = lineHeight * lines.length; //altezza totale del  blocco di testo
               const startY = height / 2 - totalHeight / 3; //calcola dove iniziare a scrivere
 
@@ -86,15 +86,15 @@ document.addEventListener("DOMContentLoaded", () => {
               lines.forEach((line, i) => {
                 if (i === 0) {
                   // prima linea
-                  ctx.font = "0.8em Poppins";
+                  ctx.font = "0.7em Poppins";
                   ctx.fillStyle = "#FFF";
                 } else if (i === 1) {
                   // seconda linea
-                  ctx.font = " 5em Poppins";
+                  ctx.font = " 3em Poppins";
                   ctx.fillStyle = "#FFF";
                 } else {
                   //resto del paragrafo
-                  ctx.font = "0.8em Poppins";
+                  ctx.font = "0.7em Poppins";
                   ctx.fillStyle = "#FFF";
                 }
                 //disegna il testo al centro della orizzontale usando la Y calcolata per il verticale
