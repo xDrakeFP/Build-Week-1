@@ -413,3 +413,11 @@ svg {
 b {
   font-weight: bold;
 }
+
+.selected {
+  background: linear-gradient(
+    180deg,
+    rgba(194, 18, 141, 1) 73%,
+    rgba(194, 18, 141, 0.71) 100%
+  );
+}
