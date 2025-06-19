@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     checkboxWelcome.addEventListener("change", () => {
       buttonWelcome.disabled = !checkboxWelcome.checked; //
     });
+  } else if (bodyId === "extra") {
+    // funzione per scegliere la difficoltà
   } else if (bodyId === "benchmark") {
     // codice solo per benchmark.html
     const formattaTempo = (secs) => {
@@ -248,7 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //   Selezione dell'utente
     let selectedOption = null;
-
+    // qua va cambiato !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     //   randomizza
     const randomQuestions = shuffleArray(questions);
     // Riferimenti agli elementi HTML
