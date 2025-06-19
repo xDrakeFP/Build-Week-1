@@ -32,13 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
         category: "Science: Computers",
         type: "multiple",
         difficulty: "hard",
-        question:
-          "What is the primary function of a hypervisor in virtualization?",
-        correct_answer: "To manage and allocate resources to virtual machines",
+        question: "What does a hypervisor do?",
+        correct_answer: "Manages VMs",
         incorrect_answers: [
-          "To convert source code into machine code",
-          "To encrypt data packets for secure transmission",
-          "To optimize database queries",
+          "Compiles code",
+          "Encrypts data",
+          "Optimizes queries",
         ],
       },
       {
@@ -78,12 +77,11 @@ document.addEventListener("DOMContentLoaded", () => {
         difficulty: "hard",
         question:
           "What is the purpose of an 'interrupt' in computer architecture?",
-        correct_answer:
-          "To signal the CPU to suspend its current task and handle an event",
+        correct_answer: "Signal CPU to handle event",
         incorrect_answers: [
-          "To halt the entire system",
-          "To initiate a system reboot",
-          "To provide power to peripheral devices",
+          "Halt system",
+          "Reboot system",
+          "Power peripherals",
         ],
       },
       {
@@ -91,38 +89,35 @@ document.addEventListener("DOMContentLoaded", () => {
         type: "multiple",
         difficulty: "hard",
         question: "In cybersecurity, what is a 'zero-day exploit'?",
-        correct_answer:
-          "An attack that exploits a previously unknown software vulnerability",
+        correct_answer: "Attack using unknown flaw",
         incorrect_answers: [
-          "An attack that occurs exactly at midnight UTC",
-          "An exploit that takes zero time to execute",
-          "A type of denial-of-service attack",
+          "Attack at midnight UTC",
+          "Instant exploit",
+          "DoS attack",
         ],
       },
       {
         category: "Science: Computers",
         type: "multiple",
         difficulty: "hard",
-        question:
-          "Which normal form (NF) in database design aims to eliminate transitive dependencies?",
+        question: "Which normal form removes transitive dependencies?",
         correct_answer: "Third Normal Form (3NF)",
         incorrect_answers: [
           "First Normal Form (1NF)",
           "Second Normal Form (2NF)",
-          "Boyce-Codd Normal Form (BCNF)",
+          "Boyce-Codd (BCNF)",
         ],
       },
       {
         category: "Science: Computers",
         type: "multiple",
         difficulty: "hard",
-        question:
-          "What does ACID stand for in the context of database transactions?",
-        correct_answer: "Atomicity, Consistency, Isolation, Durability",
+        question: "What is the main role of a database index?",
+        correct_answer: "Speed up data retrieval",
         incorrect_answers: [
-          "Accuracy, Completeness, Integrity, Dependability",
-          "Access, Control, Interface, Data",
-          "Authentication, Confidentiality, Integrity, Denial",
+          "Encrypt stored data",
+          "Enforce data consistency",
+          "Backup the database",
         ],
       },
       {
@@ -746,16 +741,17 @@ document.addEventListener("DOMContentLoaded", () => {
     //funzione calcola punteggi
     const answersPercent = () => {
       const correct = (score / total) * 100;
+      const nFixed = correct.toFixed(1);
       document.getElementById(
         "correctH2"
-      ).innerHTML = `Correct <br /> <b style="font-weight:700">${correct}%</b>`;
+      ).innerHTML = `Correct <br /> <b style="font-weight:700">${nFixed}%</b>`;
       document.getElementById(
         "correctP"
       ).innerText = `${score}/${total} questions.`;
       document.getElementById(
         "wrongH2"
       ).innerHTML = `Wrong <br /> <b style="font-weight:700">${
-        100 - correct
+        100 - nFixed
       }%</b>`;
       document.getElementById("wrongP").innerText = `${
         total - score
@@ -803,9 +799,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     }
-    const send = document.getElementById("sendForm");
-    send.addEventListener("click", () => {
-      window.location.href = "https://epicode.com/it/";
+    const input = document.getElementById("inputFeedback");
+    const form = document.getElementById("formFeedback");
+    document.getElementById("sendForm").addEventListener("click", () => {
+      event.preventDefault();
+      if (punteggioGen > 0 && input.value.length > 0) {
+        window.open("http://www.epicode.com", "_blank");
+        window.location.href = window.location.href;
+      } else {
+        alert("You must complete the form");
+      }
     });
   }
 });
