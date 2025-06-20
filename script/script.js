@@ -32,13 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
         category: "Science: Computers",
         type: "multiple",
         difficulty: "hard",
-        question:
-          "What is the primary function of a hypervisor in virtualization?",
-        correct_answer: "To manage and allocate resources to virtual machines",
+        question: "What does a hypervisor do?",
+        correct_answer: "Manages VMs",
         incorrect_answers: [
-          "To convert source code into machine code",
-          "To encrypt data packets for secure transmission",
-          "To optimize database queries",
+          "Compiles code",
+          "Encrypts data",
+          "Optimizes queries",
         ],
       },
       {
@@ -78,12 +77,11 @@ document.addEventListener("DOMContentLoaded", () => {
         difficulty: "hard",
         question:
           "What is the purpose of an 'interrupt' in computer architecture?",
-        correct_answer:
-          "To signal the CPU to suspend its current task and handle an event",
+        correct_answer: "Signal CPU to handle event",
         incorrect_answers: [
-          "To halt the entire system",
-          "To initiate a system reboot",
-          "To provide power to peripheral devices",
+          "Halt system",
+          "Reboot system",
+          "Power peripherals",
         ],
       },
       {
@@ -91,38 +89,35 @@ document.addEventListener("DOMContentLoaded", () => {
         type: "multiple",
         difficulty: "hard",
         question: "In cybersecurity, what is a 'zero-day exploit'?",
-        correct_answer:
-          "An attack that exploits a previously unknown software vulnerability",
+        correct_answer: "Attack using unknown flaw",
         incorrect_answers: [
-          "An attack that occurs exactly at midnight UTC",
-          "An exploit that takes zero time to execute",
-          "A type of denial-of-service attack",
+          "Attack at midnight UTC",
+          "Instant exploit",
+          "DoS attack",
         ],
       },
       {
         category: "Science: Computers",
         type: "multiple",
         difficulty: "hard",
-        question:
-          "Which normal form (NF) in database design aims to eliminate transitive dependencies?",
+        question: "Which normal form removes transitive dependencies?",
         correct_answer: "Third Normal Form (3NF)",
         incorrect_answers: [
           "First Normal Form (1NF)",
           "Second Normal Form (2NF)",
-          "Boyce-Codd Normal Form (BCNF)",
+          "Boyce-Codd (BCNF)",
         ],
       },
       {
         category: "Science: Computers",
         type: "multiple",
         difficulty: "hard",
-        question:
-          "What does ACID stand for in the context of database transactions?",
-        correct_answer: "Atomicity, Consistency, Isolation, Durability",
+        question: "What is the main role of a database index?",
+        correct_answer: "Speed up data retrieval",
         incorrect_answers: [
-          "Accuracy, Completeness, Integrity, Dependability",
-          "Access, Control, Interface, Data",
-          "Authentication, Confidentiality, Integrity, Denial",
+          "Encrypt stored data",
+          "Enforce data consistency",
+          "Backup the database",
         ],
       },
       {
@@ -225,7 +220,6 @@ document.addEventListener("DOMContentLoaded", () => {
         incorrect_answers: ["Apple", "IBM", "Google"],
       },
     ];
-    //  Gestione Array delle domande + risposte vere e false
 
     const questions = [
       {
@@ -322,52 +316,47 @@ document.addEventListener("DOMContentLoaded", () => {
         incorrect_answers: ["Python", "C", "Jakarta"],
       },
     ];
-
-    // funzione per scegliere la difficoltà
-    // prendiamo tutti i bottoni
-    const buttonChoice = document.querySelectorAll("difficulty");
-    const confirmButton = document.getElementById("confirm-button");
+    const buttons = document.querySelectorAll(".difficulty");
+    const confirm = document.getElementById("confirmButton");
+    let selectedArray = [];
     // bottone conferma nascosto
     confirmButton.style.display = "none";
     confirmButton.disabled = true;
-    // cicliare bottoni
-    //   funzione per gestire la selezione di un opzione
-    const selection = (clickedButton, optionText) => {
-      // rimuove la classe selected da tutti i bottoni
-      Array.from(optionsContainer.children).forEach((btn) => {
-        btn.classList.remove("selected");
-      });
-      // aggiungi la classe selected al bottone cliccato
-      clickedButton.classList.add("selected");
-      // memorizza l'opzione selezionata
-      selectedOption = optionText;
-      // mostra e abilita il bottone di conferma
-      confirmButton.style.display = "block";
-      confirmButton.disabled = false;
-      button.addEventListener("click", () =>
-        selection(clickedButton, optionText)
-      );
-    };
 
-    // funziona scelta difficolta e di array da utilizzare
-    const choisePlayer = (click) => {
-      switch (click) {
-        case easy:
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        buttons.forEach((btn) => btn.classList.remove("selected"));
+        button.classList.add("selected");
+        confirm.style.display = "block";
+        confirm.disabled = false;
+      });
+    });
+
+    confirm.addEventListener("click", () => {
+      let selection = document.querySelector(".selected").innerText;
+      switch (selection) {
+        case "Easy":
+          selectedArray = [...easyQuestions];
+          sessionStorage.setItem("myArray", JSON.stringify(selectedArray));
           window.location.href = "benchmark.html";
           break;
-        case normal:
+        case "Normal":
+          selectedArray = [...questions];
+          sessionStorage.setItem("myArray", JSON.stringify(selectedArray));
           window.location.href = "benchmark.html";
           break;
-        case hard:
+        case "Hard":
+          selectedArray = [...hardQuestions];
+          sessionStorage.setItem("myArray", JSON.stringify(selectedArray));
           window.location.href = "benchmark.html";
           break;
-        case impossible:
+        case "Impossible":
+          selectedArray = [...easyQuestions, ...questions, ...hardQuestions];
+          sessionStorage.setItem("myArray", JSON.stringify(selectedArray));
           window.location.href = "benchmark.html";
           break;
       }
-    };
-
-    confirmButton.addEventListener("click", choisePlayer);
+    });
   } else if (bodyId === "benchmark") {
     // codice solo per benchmark.html
     const formattaTempo = (secs) => {
@@ -481,7 +470,6 @@ document.addEventListener("DOMContentLoaded", () => {
               "REMAINING",
             ];
             myChart.update();
-            console.log(chartArray);
           } else if (tempoRimanente <= 0) {
             // Quando il tempo scade fermo setInterval
             clearInterval();
@@ -509,7 +497,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //   Selezione dell'utente
     let selectedOption = null;
-    // VA CAMBIATOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    let questions = JSON.parse(sessionStorage.getItem("myArray"));
+    console.log(questions);
     //   randomizza
     const randomQuestions = shuffleArray(questions);
     // Riferimenti agli elementi HTML
@@ -644,8 +634,10 @@ document.addEventListener("DOMContentLoaded", () => {
       "Keep an eye on your email",
       "for further instructions.",
     ];
+    let questions = JSON.parse(sessionStorage.getItem("myArray"));
+    let total = questions.length;
 
-    const passed = score >= 6;
+    const passed = score >= total * 0.6;
 
     let messageSelected = passed ? messageCorrect : messageWrong;
 
@@ -654,7 +646,7 @@ document.addEventListener("DOMContentLoaded", () => {
       data: {
         datasets: [
           {
-            data: [10 - score, score], //array con valori per il grafico
+            data: [total - score, score], //array con valori per il grafico
             cutout: "70%", //quanto spazio lasciare al centro
             backgroundColor: [
               "#D20094", //colore di wrong
@@ -748,19 +740,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //funzione calcola punteggi
     const answersPercent = () => {
-      const correct = score * 10;
+      const correct = (score / total) * 100;
+      const nFixed = correct.toFixed(1);
       document.getElementById(
         "correctH2"
-      ).innerHTML = `Correct <br /> <b style="font-weight:700">${correct}%</b>`;
-      document.getElementById("correctP").innerText = `${score}/10 questions.`;
+      ).innerHTML = `Correct <br /> <b style="font-weight:700">${nFixed}%</b>`;
+      document.getElementById(
+        "correctP"
+      ).innerText = `${score}/${total} questions.`;
       document.getElementById(
         "wrongH2"
       ).innerHTML = `Wrong <br /> <b style="font-weight:700">${
-        100 - correct
+        100 - nFixed
       }%</b>`;
       document.getElementById("wrongP").innerText = `${
-        10 - score
-      }/10 questions.`;
+        total - score
+      }/${total} questions.`;
     };
 
     answersPercent();
@@ -804,5 +799,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     }
+    const input = document.getElementById("inputFeedback");
+    const form = document.getElementById("formFeedback");
+    document.getElementById("sendForm").addEventListener("click", () => {
+      event.preventDefault();
+      if (punteggioGen > 0 && input.value.length > 0) {
+        window.open("http://www.epicode.com", "_blank");
+        window.location.href = window.location.href;
+      } else {
+        alert("You must complete the form");
+      }
+    });
   }
 });

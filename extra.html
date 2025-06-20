@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Difficulty selection</title>
     <link rel="preconnect" href="https://fonts.googleapis.com/" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link
@@ -13,18 +13,24 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body id="extra">
-    <header></header>
-    <main>
-      <h1>Choose your Difficulty</h1>
-      <div class="choose">
+    <header>
+      <div class="logo">
+        <img src="./assets/img/epicode_logo.png" alt="Logo di Epicode" />
+      </div>
+    </header>
+    <main class="extra">
+      <h1 class="spazio"><b> Choose your Difficulty</b></h1>
+
+      <div id="difficulties">
         <button id="easy" class="difficulty">Easy</button>
         <button id="normal" class="difficulty">Normal</button>
         <button id="hard" class="difficulty">Hard</button>
         <button id="impossible" class="difficulty">Impossible</button>
-        <button id="confirm-button" class="confirm-button">Confirm</button>
       </div>
+      <button id="confirmButton" class="confirm-button">Confirm</button>
     </main>
     <footer></footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./script/script.js"></script>
   </body>
 </html>
