@@ -741,7 +741,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //funzione calcola punteggi
     const answersPercent = () => {
       const correct = (score / total) * 100;
-      const nFixed = correct.toFixed(1);
+      const nFixed = parseFloat(parseFloat(correct).toFixed(1));
       document.getElementById(
         "correctH2"
       ).innerHTML = `Correct <br /> <b style="font-weight:700">${nFixed}%</b>`;
