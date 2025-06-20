@@ -10,7 +10,364 @@ document.addEventListener("DOMContentLoaded", () => {
       buttonWelcome.disabled = !checkboxWelcome.checked; //
     });
   } else if (bodyId === "extra") {
+    const hardQuestions = [
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "hard",
+        question:
+          "What is the name of the most powerful supercomputer in the world, as of November 2023?",
+        correct_answer: "Frontier",
+        incorrect_answers: ["Fugaku", "Summit", "Sierra"],
+      },
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "hard",
+        question: "Which of the following is NOT a type of CPU cache?",
+        correct_answer: "L4 Cache",
+        incorrect_answers: ["L1 Cache", "L2 Cache", "L3 Cache"],
+      },
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "hard",
+        question:
+          "What is the primary function of a hypervisor in virtualization?",
+        correct_answer: "To manage and allocate resources to virtual machines",
+        incorrect_answers: [
+          "To convert source code into machine code",
+          "To encrypt data packets for secure transmission",
+          "To optimize database queries",
+        ],
+      },
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "hard",
+        question:
+          "In object-oriented programming, what does 'polymorphism' literally mean?",
+        correct_answer: "Many forms",
+        incorrect_answers: [
+          "Single form",
+          "Multiple objects",
+          "Inherited behavior",
+        ],
+      },
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "hard",
+        question:
+          "Which cryptographic hash function is commonly used for Bitcoin mining?",
+        correct_answer: "SHA-256",
+        incorrect_answers: ["MD5", "RIPEMD-160", "SHA-1"],
+      },
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "hard",
+        question:
+          "Which data structure uses LIFO (Last In, First Out) principle?",
+        correct_answer: "Stack",
+        incorrect_answers: ["Queue", "Array", "Linked List"],
+      },
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "hard",
+        question:
+          "What is the purpose of an 'interrupt' in computer architecture?",
+        correct_answer:
+          "To signal the CPU to suspend its current task and handle an event",
+        incorrect_answers: [
+          "To halt the entire system",
+          "To initiate a system reboot",
+          "To provide power to peripheral devices",
+        ],
+      },
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "hard",
+        question: "In cybersecurity, what is a 'zero-day exploit'?",
+        correct_answer:
+          "An attack that exploits a previously unknown software vulnerability",
+        incorrect_answers: [
+          "An attack that occurs exactly at midnight UTC",
+          "An exploit that takes zero time to execute",
+          "A type of denial-of-service attack",
+        ],
+      },
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "hard",
+        question:
+          "Which normal form (NF) in database design aims to eliminate transitive dependencies?",
+        correct_answer: "Third Normal Form (3NF)",
+        incorrect_answers: [
+          "First Normal Form (1NF)",
+          "Second Normal Form (2NF)",
+          "Boyce-Codd Normal Form (BCNF)",
+        ],
+      },
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "hard",
+        question:
+          "What does ACID stand for in the context of database transactions?",
+        correct_answer: "Atomicity, Consistency, Isolation, Durability",
+        incorrect_answers: [
+          "Accuracy, Completeness, Integrity, Dependability",
+          "Access, Control, Interface, Data",
+          "Authentication, Confidentiality, Integrity, Denial",
+        ],
+      },
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "easy",
+        question: "What does 'WWW' stand for?",
+        correct_answer: "World Wide Web",
+        incorrect_answers: [
+          "World Web Work",
+          "Wide World Web",
+          "Web World Wide",
+        ],
+      },
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "easy",
+        question: "Which of these is a popular web browser?",
+        correct_answer: "Google Chrome",
+        incorrect_answers: [
+          "Microsoft Word",
+          "Adobe Photoshop",
+          "VLC Media Player",
+        ],
+      },
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "easy",
+        question: "What is used to connect computers in a network?",
+        correct_answer: "Router",
+        incorrect_answers: ["Toaster", "Washing machine", "Refrigerator"],
+      },
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "easy",
+        question: "What is the common term for unwanted commercial email?",
+        correct_answer: "Spam",
+        incorrect_answers: ["Junk mail", "Phishing", "Malware"],
+      },
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "easy",
+        question: "What is the primary language used for creating web pages?",
+        correct_answer: "HTML",
+        incorrect_answers: ["Python", "Java", "C++"],
+      },
+    ];
+
+    const easyQuestions = [
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "easy",
+        question: "What does CPU stand for?",
+        correct_answer: "Central Processing Unit",
+        incorrect_answers: [
+          "Central Process Unit",
+          "Computer Personal Unit",
+          "Central Processor Unit",
+        ],
+      },
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "easy",
+        question: "What is the smallest unit of data in a computer?",
+        correct_answer: "Bit",
+        incorrect_answers: ["Byte", "Kilobyte", "Megabyte"],
+      },
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "easy",
+        question: "Which of these is an input device?",
+        correct_answer: "Keyboard",
+        incorrect_answers: ["Monitor", "Printer", "Speakers"],
+      },
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "easy",
+        question: "What is the function of RAM in a computer?",
+        correct_answer: "Temporary data storage",
+        incorrect_answers: [
+          "Permanent data storage",
+          "Processing instructions",
+          "Displaying images",
+        ],
+      },
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "easy",
+        question: "Which company developed the Windows operating system?",
+        correct_answer: "Microsoft",
+        incorrect_answers: ["Apple", "IBM", "Google"],
+      },
+    ];
+    //  Gestione Array delle domande + risposte vere e false
+
+    const questions = [
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "easy",
+        question: "What does CPU stand for?",
+        correct_answer: "Central Processing Unit",
+        incorrect_answers: [
+          "Central Process Unit",
+          "Computer Personal Unit",
+          "Central Processor Unit",
+        ],
+      },
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "easy",
+        question:
+          "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+        correct_answer: "Final",
+        incorrect_answers: ["Static", "Private", "Public"],
+      },
+      {
+        category: "Science: Computers",
+        type: "boolean",
+        difficulty: "easy",
+        question: "The logo for Snapchat is a Bell.",
+        correct_answer: "False",
+        incorrect_answers: ["True"],
+      },
+      {
+        category: "Science: Computers",
+        type: "boolean",
+        difficulty: "easy",
+        question:
+          "Pointers were not used in the original C programming language; they were added later on in C++.",
+        correct_answer: "False",
+        incorrect_answers: ["True"],
+      },
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "easy",
+        question:
+          "What is the most preferred image format used for logos in the Wikimedia database?",
+        correct_answer: ".svg",
+        incorrect_answers: [".png", ".jpeg", ".gif"],
+      },
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "easy",
+        question: "In web design, what does CSS stand for?",
+        correct_answer: "Cascading Style Sheet",
+        incorrect_answers: [
+          "Counter Strike: Source",
+          "Corrective Style Sheet",
+          "Computer Style Sheet",
+        ],
+      },
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "easy",
+        question:
+          "What is the code name for the mobile operating system Android 7.0?",
+        correct_answer: "Nougat",
+        incorrect_answers: ["Ice Cream Sandwich", "Jelly Bean", "Marshmallow"],
+      },
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "easy",
+        question: "On Twitter, what is the character limit for a Tweet?",
+        correct_answer: "140",
+        incorrect_answers: ["120", "160", "100"],
+      },
+      {
+        category: "Science: Computers",
+        type: "boolean",
+        difficulty: "easy",
+        question: "Linux was first created as an alternative to Windows XP.",
+        correct_answer: "False",
+        incorrect_answers: ["True"],
+      },
+      {
+        category: "Science: Computers",
+        type: "multiple",
+        difficulty: "easy",
+        question:
+          "Which programming language shares its name with an island in Indonesia?",
+        correct_answer: "Java",
+        incorrect_answers: ["Python", "C", "Jakarta"],
+      },
+    ];
+
     // funzione per scegliere la difficoltà
+    // prendiamo tutti i bottoni
+    const buttonChoice = document.querySelectorAll("difficulty");
+    const confirmButton = document.getElementById("confirm-button");
+    // bottone conferma nascosto
+    confirmButton.style.display = "none";
+    confirmButton.disabled = true;
+    // cicliare bottoni
+    //   funzione per gestire la selezione di un opzione
+    const selection = (clickedButton, optionText) => {
+      // rimuove la classe selected da tutti i bottoni
+      Array.from(optionsContainer.children).forEach((btn) => {
+        btn.classList.remove("selected");
+      });
+      // aggiungi la classe selected al bottone cliccato
+      clickedButton.classList.add("selected");
+      // memorizza l'opzione selezionata
+      selectedOption = optionText;
+      // mostra e abilita il bottone di conferma
+      confirmButton.style.display = "block";
+      confirmButton.disabled = false;
+      button.addEventListener("click", () =>
+        selection(clickedButton, optionText)
+      );
+    };
+
+    // funziona scelta difficolta e di array da utilizzare
+    const choisePlayer = (click) => {
+      switch (click) {
+        case easy:
+          window.location.href = "benchmark.html";
+          break;
+        case normal:
+          window.location.href = "benchmark.html";
+          break;
+        case hard:
+          window.location.href = "benchmark.html";
+          break;
+        case impossible:
+          window.location.href = "benchmark.html";
+          break;
+      }
+    };
+
+    confirmButton.addEventListener("click", choisePlayer);
   } else if (bodyId === "benchmark") {
     // codice solo per benchmark.html
     const formattaTempo = (secs) => {
@@ -146,111 +503,13 @@ document.addEventListener("DOMContentLoaded", () => {
     //   Score
     let score = 0;
 
-    //  Gestione Array delle domande + risposte vere e false
-
-    const questions = [
-      {
-        category: "Science: Computers",
-        type: "multiple",
-        difficulty: "easy",
-        question: "What does CPU stand for?",
-        correct_answer: "Central Processing Unit",
-        incorrect_answers: [
-          "Central Process Unit",
-          "Computer Personal Unit",
-          "Central Processor Unit",
-        ],
-      },
-      {
-        category: "Science: Computers",
-        type: "multiple",
-        difficulty: "easy",
-        question:
-          "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
-        correct_answer: "Final",
-        incorrect_answers: ["Static", "Private", "Public"],
-      },
-      {
-        category: "Science: Computers",
-        type: "boolean",
-        difficulty: "easy",
-        question: "The logo for Snapchat is a Bell.",
-        correct_answer: "False",
-        incorrect_answers: ["True"],
-      },
-      {
-        category: "Science: Computers",
-        type: "boolean",
-        difficulty: "easy",
-        question:
-          "Pointers were not used in the original C programming language; they were added later on in C++.",
-        correct_answer: "False",
-        incorrect_answers: ["True"],
-      },
-      {
-        category: "Science: Computers",
-        type: "multiple",
-        difficulty: "easy",
-        question:
-          "What is the most preferred image format used for logos in the Wikimedia database?",
-        correct_answer: ".svg",
-        incorrect_answers: [".png", ".jpeg", ".gif"],
-      },
-      {
-        category: "Science: Computers",
-        type: "multiple",
-        difficulty: "easy",
-        question: "In web design, what does CSS stand for?",
-        correct_answer: "Cascading Style Sheet",
-        incorrect_answers: [
-          "Counter Strike: Source",
-          "Corrective Style Sheet",
-          "Computer Style Sheet",
-        ],
-      },
-      {
-        category: "Science: Computers",
-        type: "multiple",
-        difficulty: "easy",
-        question:
-          "What is the code name for the mobile operating system Android 7.0?",
-        correct_answer: "Nougat",
-        incorrect_answers: ["Ice Cream Sandwich", "Jelly Bean", "Marshmallow"],
-      },
-      {
-        category: "Science: Computers",
-        type: "multiple",
-        difficulty: "easy",
-        question: "On Twitter, what is the character limit for a Tweet?",
-        correct_answer: "140",
-        incorrect_answers: ["120", "160", "100"],
-      },
-      {
-        category: "Science: Computers",
-        type: "boolean",
-        difficulty: "easy",
-        question: "Linux was first created as an alternative to Windows XP.",
-        correct_answer: "False",
-        incorrect_answers: ["True"],
-      },
-      {
-        category: "Science: Computers",
-        type: "multiple",
-        difficulty: "easy",
-        question:
-          "Which programming language shares its name with an island in Indonesia?",
-        correct_answer: "Java",
-        incorrect_answers: ["Python", "C", "Jakarta"],
-      },
-    ];
-
     // Variabili del quiz:
     // Domanda corrente
     let currentQuestionIndex = 0;
 
     //   Selezione dell'utente
     let selectedOption = null;
-    // qua va cambiato !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // VA CAMBIATOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     //   randomizza
     const randomQuestions = shuffleArray(questions);
     // Riferimenti agli elementi HTML
